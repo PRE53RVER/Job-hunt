@@ -1,0 +1,29 @@
+# ---- Personal data: never commit ----
+# resumes and any exported documents
+*.pdf
+*.docx
+*.doc
+# generated profile, master resume, search settings, tracker, raw scrapes
+/job-hunt/
+# tailored resumes, JDs, referral lists
+/Companies/
+# daily reports
+/Reports/
+
+# ---- Python ----
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# ---- Editors / OS ----
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- Claude Code local settings ----
+.claude/settings.local.json

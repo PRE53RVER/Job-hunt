@@ -1,0 +1,35 @@
+{
+  "_help": {
+    "country_indeed": "Indeed/Glassdoor country, e.g. india, usa, uk, canada, germany, uae, singapore",
+    "sites": "any of linkedin, indeed, naukri (India only), glassdoor, google, zip_recruiter (US/CA), bayt (Gulf)",
+    "search_terms": "6-8 job titles to search; the first quick_terms are used by --quick",
+    "locations": "cities to search, most preferred first; tier must exist in tiers; the first quick_locations are used by --quick",
+    "tiers": "match = words that identify that area inside a posting's location text (include state codes like KL/KA used by Indeed); bonus = pre-score points",
+    "skills": "lower-case keywords from the resume; a job must mention at least one",
+    "max_years_required": "drop jobs whose minimum experience asked is above this (fresher: 1)",
+    "exclude_title_words": "drop jobs whose title contains any of these words",
+    "title_must_match": "regex fragments; the title must match at least one (leave [] to allow all)",
+    "level_signals": "words that mean the job suits this person's level; gives a pre-score boost"
+  },
+  "country_indeed": "india",
+  "sites": ["linkedin", "indeed", "naukri"],
+  "hours_old": 72,
+  "quick_terms": 3,
+  "quick_locations": 4,
+  "search_terms": ["machine learning engineer", "ai engineer fresher", "data scientist fresher"],
+  "locations": [
+    {"search": "Kochi, Kerala", "tier": 1},
+    {"search": "Bengaluru, Karnataka", "tier": 2},
+    {"search": "Chennai, Tamil Nadu", "tier": 3}
+  ],
+  "tiers": {
+    "1": {"label": "Kerala", "bonus": 15, "match": ["KL", "Kerala", "Kochi", "Cochin", "Ernakulam", "Trivandrum", "Thiruvananthapuram"]},
+    "2": {"label": "Bengaluru", "bonus": 10, "match": ["KA", "Bengaluru", "Bangalore"]},
+    "3": {"label": "Rest of South India", "bonus": 5, "match": ["TN", "TS", "AP", "Chennai", "Hyderabad", "Coimbatore"]}
+  },
+  "skills": ["python", "machine learning", "pytorch", "sql"],
+  "max_years_required": 1,
+  "exclude_title_words": ["senior", "sr", "lead", "principal", "staff", "manager", "head", "director", "architect", "vp", "specialist", "II", "III", "IV", "sales", "marketing", "bpo", "telecaller", "accountant", "hr", "recruiter", "teacher", "faculty", "nurse", "designer", "executive", "operations", "administrator"],
+  "title_must_match": ["engineer", "developer", "scientist", "analyst", "\\bai\\b", "\\bml\\b", "machine learning", "data", "intern", "trainee", "programmer", "research", "early career", "graduate"],
+  "level_signals": ["fresher", "freshers", "entry level", "entry-level", "0-1 yrs", "0-1 years", "0-2 yrs", "trainee", "intern", "graduate", "new grad", "2025 batch", "2026 batch"]
+}

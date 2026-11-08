@@ -1,0 +1,81 @@
+<!doctype html>
+<!--
+  Base layout for master_resume.html. Setup copies this file and fills it with the person's resume content.
+  Rules:
+   - Keep `@page { size: A4 }`. Every resume must render as A4.
+   - Reproduce the original resume's sections, wording, numbers and links exactly. Add nothing.
+   - Section order, names and fonts may change to match the original (e.g. EXPERIENCE before PROJECTS).
+   - Delete any example block below that the person doesn't have.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{{FULL NAME}} - Resume</title>
+<style>
+  @page { size: A4; margin: 12mm 14mm; }
+  * { box-sizing: border-box; }
+  body { font-family: "Times New Roman", Times, serif; font-size: 10.5pt; line-height: 1.28; color: #111; margin: 0; }
+  a { color: #1a4fa0; }
+  h1 { text-align: center; color: #1f3864; font-size: 22pt; margin: 0 0 2px; letter-spacing: .5px; }
+  .contact { text-align: center; font-size: 10pt; }
+  .contact .sep { margin: 0 6px; color: #555; }
+  h2 { color: #1f3864; font-size: 12.5pt; margin: 10px 0 4px; padding-bottom: 1px; border-bottom: 1.2px solid #1f3864; }
+  p { margin: 0; text-align: justify; }
+  .row { display: flex; justify-content: space-between; }
+  .row b { font-weight: bold; }
+  .entry { margin-bottom: 3px; }
+  .proj { margin-top: 5px; }
+  .proj-title { font-weight: bold; }
+  .stack { font-style: italic; color: #444; font-size: 9.8pt; }
+  .note { font-style: italic; font-weight: bold; color: #1f3864; font-size: 9.8pt; }
+  ul { margin: 2px 0 0; padding-left: 18px; }
+  li { margin: 1px 0; }
+</style>
+</head>
+<body>
+
+<h1>{{FULL NAME}}</h1>
+<div class="contact">
+  {{City, State}}<span class="sep">|</span>{{phone}}<span class="sep">|</span>{{email}}<br>
+  <a href="{{linkedin url}}">LinkedIn</a><span class="sep">|</span><a href="{{github url}}">GitHub</a><span class="sep">|</span><a href="{{portfolio url}}">Portfolio</a>
+</div>
+
+<h2>PROFILE</h2>
+<p>{{summary paragraph}}</p>
+
+<h2>EXPERIENCE</h2>
+<div class="proj">
+  <div class="row"><b>{{Job title}} &mdash; {{Company}}</b><span>{{dates}}</span></div>
+  <ul>
+    <li>{{bullet}}</li>
+  </ul>
+</div>
+
+<h2>EDUCATION</h2>
+<div class="entry">
+  <div class="row"><b>{{Degree}}</b><span>{{years}}</span></div>
+  <div>{{Institution}} | {{grade}}</div>
+</div>
+
+<h2>PROJECTS</h2>
+<div class="proj">
+  <div><span class="proj-title">{{Project name}}</span> &nbsp;|&nbsp; <a href="{{repo url}}">GitHub</a></div>
+  <div class="stack">{{tech | stack}}</div>
+  <div class="note">{{optional note, e.g. Published at ...}}</div>
+  <ul>
+    <li>{{bullet}}</li>
+  </ul>
+</div>
+
+<h2>SKILLS</h2>
+<ul>
+  <li><b>{{Category}}:</b> {{items}}</li>
+</ul>
+
+<h2>ACHIEVEMENTS &amp; PUBLICATIONS</h2>
+<ul>
+  <li>{{item}}</li>
+</ul>
+
+</body>
+</html>
